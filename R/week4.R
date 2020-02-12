@@ -17,3 +17,5 @@ week4_df$datadate <- as.POSIXct(week4_df$datadate, format="%B %d %Y, %H:%M:%S")
 
 
 # Data Analysis
+qt_over_time_df <- spread(subset(week4_df, select=c(parnum, stimver, q2)), stimver, q2)
+sum(complete.cases(qt_over_time_df))/length(qt_over_time_df$parnum)
